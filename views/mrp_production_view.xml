@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="mrp_production_form_view_inherited_view" model="ir.ui.view">
+        <field name="name">mrp.production.inherited.view</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button type="object" name="create_all_qty" class="oe_stat_button"
+                        icon="fa-check-circle-o" string="Create Batch Serial No."
+                        attrs="{'invisible': [('state', '!=', 'planned')]}">
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
